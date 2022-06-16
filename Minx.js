@@ -418,7 +418,7 @@ module.exports = iiuziBotInc = async (iiuziBotInc, m, chatUpdate, store) => {
 
 const reply = (teks) => {
 
-            iiuziBotInc.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` Join Bot's Official GC`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./MinxMedia/Minx.jpg`),"sourceUrl": "https://chat.whatsapp.com/LS1Xx3fSqg7FpSYSjKWhL5"}}}, { quoted: m})
+            iiuziBotInc.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` Join Bot's Official GC`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./MinxMedia/Minx.jpg`),"sourceUrl": "https://chat.whatsapp.com/EcVIsg2j0UH93Z1sLhTCyW"}}}, { quoted: m})
 
         }
 
@@ -4716,7 +4716,7 @@ case 'webtonsearch': case 'webtoon':
 
 	    case 'nomerhoki': case 'nomorhoki': {
 
-                if (!Number(text)) return reply(`Example : ${prefix + command} 916909137213`)
+                if (!Number(text)) return reply(`Example : ${prefix + command} 918590451659`)
 
                 let anu = await primbon.nomer_hoki(Number(text))
 
@@ -6546,7 +6546,7 @@ break
 
                     	if(!text) return reply(`Enter The Bug\n\nExample: ${command} Menu Error`)
 
-                    	iiuziBotInc.sendMessage(`916909137213@s.whatsapp.net`, {text: `*Bug Report From:* wa.me/${m.sender.split("@")[0]}
+                    	iiuziBotInc.sendMessage(`918590451659@s.whatsapp.net`, {text: `*Bug Report From:* wa.me/${m.sender.split("@")[0]}
 
 Report Message: ${text}` })
 
@@ -7038,7 +7038,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 
     case 'donasi': case 'donate': case 'sewabot': case 'sewa': case 'buypremium': case 'donate': {
 
-                iiuziBotInc.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/6ba2aed566865a068e91f.jpg' }, caption: `*Hi Bro ${m.pushName}*\n\nDonate Me : \n\n🐶 Fampay : https://telegra.ph/file/6ba2aed566865a068e91f.jpg\n🐶 Paytm : https://telegra.ph/file/577bd4f28d90ca2c7f369.jpg\n\nIf You Want To Donate, Talk With The Owner First\nwa.me/916909137213 (Click To Contact)` }, { quoted: m })
+                iiuziBotInc.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/6ba2aed566865a068e91f.jpg' }, caption: `*Hi Bro ${m.pushName}*\n\nDonate Me : \n\n🐶 Fampay : https://telegra.ph/file/6ba2aed566865a068e91f.jpg\n🐶 Paytm : https://telegra.ph/file/577bd4f28d90ca2c7f369.jpg\n\nIf You Want To Donate, Talk With The Owner First\nwa.me/918590451659 (Click To Contact)` }, { quoted: m })
 
             }
 
