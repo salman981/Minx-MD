@@ -62,7 +62,7 @@ Add FFmpeg to PATH environment variable
 > pkg install wget
 > pkg install imagemagick -y
 > git clone https://github.com/iiuzi-0x/Minx-MD
-> cd Gojo-Satoru
+> cd Minx-MD
 > npm install
 ```
 </details>
