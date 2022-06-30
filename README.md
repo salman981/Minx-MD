@@ -4,7 +4,7 @@
 
 ## Minx-MD
 
-> <a href="https://youtu.be/kb1cGKUo-Jg"><img src="https://img.shields.io/badge/Tutorial-Video-ff0000?style=for-the-badge&logo=youtube&logoColor=ff000000&link=https://www.youtube.com/c/BOTINDO" /><br>
+> <a href="https://youtu.be/Nhjw12ODzKI"><img src="https://img.shields.io/badge/Tutorial-Video-ff0000?style=for-the-badge&logo=youtube&logoColor=ff000000&link=https://www.youtube.com/c/BOTINDO" /><br>
 
 > [Automated Multi Device whatsapp bot created](https://github.com/iiuzi-0x/Minx-MD) by [iiuzi](github.com/iiuzi-0x)
 
