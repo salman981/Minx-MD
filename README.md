@@ -20,7 +20,7 @@ heroku/nodejs
 
 ## `Deploy on Railway`
 
-[![Deploy-Minx-Railway](https://railway.app/button.svg)](https://railway.app/new/template/e9CKXX?referralCode=iiuzi-0x)
+[![Deploy-Minx-Railway](https://railway.app/button.svg)](https://railway.app/new/template/r4VPTE?referralCode=iiuzi-0x)
 
 
 
