@@ -18,9 +18,6 @@ heroku/nodejs
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/iiuzi-0x/Minx-MD/)
 
 
-## `Deploy on Railway`
-
-[![Deploy-Minx-Railway](https://railway.app/button.svg)](https://railway.app/new/template/r4VPTE?referralCode=iiuzi-0x)
 
 
 
