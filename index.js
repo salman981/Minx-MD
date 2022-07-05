@@ -8,7 +8,7 @@
 
 //no credit? i will take action immediately
 
-//© 2022 iiuzi-0x Bot Inc. Minx-MD
+//© 2022 iiuzi Bot Inc. Minx-MD
 
 //Thank you to Lord Buddha, Family and Myself
 
@@ -18,7 +18,7 @@
 
 require('./settings')
 
-const { default: iiuzi-0xBotIncConnect, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@adiwajshing/baileys")
+const { default: iiuziBotIncConnect, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@adiwajshing/baileys")
 
 const { state, saveState } = useSingleFileAuthState(`./${sessionName}.json`)
 
@@ -118,15 +118,15 @@ if (global.db) setInterval(async () => {
 
 
 
-async function startiiuzi-0xBotInc() {
+async function startiiuziBotInc() {
 
-    const iiuzi-0xBotInc = iiuzi-0xBotIncConnect({
+    const iiuziBotInc = iiuziBotIncConnect({
 
         logger: pino({ level: 'silent' }),
 
         printQRInTerminal: true,
 
-        browser: ['Subscribe iiuzi-0x','Safari','1.0.0'],
+        browser: ['Subscribe iiuzi','Safari','1.0.0'],
 
         auth: state
 
@@ -134,25 +134,25 @@ async function startiiuzi-0xBotInc() {
 
 
 
-    store.bind(iiuzi-0xBotInc.ev)
+    store.bind(iiuziBotInc.ev)
 
     
 
     // anticall auto block
 
-    iiuzi-0xBotInc.ws.on('CB:call', async (json) => {
+    iiuziBotInc.ws.on('CB:call', async (json) => {
 
     const callerId = json.content[0].attrs['call-creator']
 
     if (json.content[0].tag == 'offer') {
 
-    let pa7rick = await iiuzi-0xBotInc.sendContact(callerId, global.owner)
+    let pa7rick = await iiuziBotInc.sendContact(callerId, global.owner)
 
-    iiuzi-0xBotInc.sendMessage(callerId, { text: `Automatic Block System!\nDon't Call Bot!\nPlease Ask Or Contact The Owner To Unblock You!`}, { quoted : pa7rick })
+    iiuziBotInc.sendMessage(callerId, { text: `Automatic Block System!\nDon't Call Bot!\nPlease Ask Or Contact The Owner To Unblock You!`}, { quoted : pa7rick })
 
     await sleep(8000)
 
-    await iiuzi-0xBotInc.updateBlockStatus(callerId, "block")
+    await iiuziBotInc.updateBlockStatus(callerId, "block")
 
     }
 
@@ -160,7 +160,7 @@ async function startiiuzi-0xBotInc() {
 
 
 
-    iiuzi-0xBotInc.ev.on('messages.upsert', async chatUpdate => {
+    iiuziBotInc.ev.on('messages.upsert', async chatUpdate => {
 
         //console.log(JSON.stringify(chatUpdate, undefined, 2))
 
@@ -174,13 +174,13 @@ async function startiiuzi-0xBotInc() {
 
         if (mek.key && mek.key.remoteJid === 'status@broadcast') return
 
-        if (!iiuzi-0xBotInc.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
+        if (!iiuziBotInc.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
 
         if (mek.key.id.startsWith('BAE5') && mek.key.id.length === 16) return
 
-        m = smsg(iiuzi-0xBotInc, mek, store)
+        m = smsg(iiuziBotInc, mek, store)
 
-        require("./Minx")(iiuzi-0xBotInc, m, chatUpdate, store)
+        require("./Minx")(iiuziBotInc, m, chatUpdate, store)
 
         } catch (err) {
 
@@ -194,7 +194,7 @@ async function startiiuzi-0xBotInc() {
 
     // Group Update
 
-    iiuzi-0xBotInc.ev.on('groups.update', async pea => {
+    iiuziBotInc.ev.on('groups.update', async pea => {
 
        //console.log(pea)
 
@@ -202,11 +202,11 @@ async function startiiuzi-0xBotInc() {
 
        try {
 
-       ppgc = await iiuzi-0xBotInc.profilePictureUrl(pea[0].id, 'image')
+       ppgc = await iiuziBotInc.profilePictureUrl(pea[0].id, 'image')
 
        } catch {
 
-       ppgc = 'https://shortlink.iiuzi-0xBotIncarridho.my.id/rg1oT'
+       ppgc = 'https://shortlink.iiuziBotIncarridho.my.id/rg1oT'
 
        }
 
@@ -214,23 +214,23 @@ async function startiiuzi-0xBotInc() {
 
        if (pea[0].announce == true) {
 
-       iiuzi-0xBotInc.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nThe Group Has Been Closed By Admin, Now Only Admin Can Send Messages !`, `Group Settings Change Message`, wm_fatih, [])
+       iiuziBotInc.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nThe Group Has Been Closed By Admin, Now Only Admin Can Send Messages !`, `Group Settings Change Message`, wm_fatih, [])
 
        } else if(pea[0].announce == false) {
 
-       iiuzi-0xBotInc.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nThe Group Has Been Opened By Admin, Now Participants Can Send Messages !`, `Group Settings Change Message`, wm_fatih, [])
+       iiuziBotInc.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nThe Group Has Been Opened By Admin, Now Participants Can Send Messages !`, `Group Settings Change Message`, wm_fatih, [])
 
        } else if (pea[0].restrict == true) {
 
-       iiuzi-0xBotInc.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nGroup Info Has Been Restricted, Now Only Admin Can Edit Group Info !`, `Group Settings Change Message`, wm_fatih, [])
+       iiuziBotInc.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nGroup Info Has Been Restricted, Now Only Admin Can Edit Group Info !`, `Group Settings Change Message`, wm_fatih, [])
 
        } else if (pea[0].restrict == false) {
 
-       iiuzi-0xBotInc.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nGroup Info Has Been Opened, Now Participants Can Edit Group Info !`, `Group Settings Change Message`, wm_fatih, [])
+       iiuziBotInc.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nGroup Info Has Been Opened, Now Participants Can Edit Group Info !`, `Group Settings Change Message`, wm_fatih, [])
 
        } else {
 
-       iiuzi-0xBotInc.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nGroup Subject Has Been Changed To *${pea[0].subject}*`, `Group Settings Change Message`, wm_fatih, [])
+       iiuziBotInc.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nGroup Subject Has Been Changed To *${pea[0].subject}*`, `Group Settings Change Message`, wm_fatih, [])
 
      }
 
@@ -238,13 +238,13 @@ async function startiiuzi-0xBotInc() {
 
 
 
-    iiuzi-0xBotInc.ev.on('group-participants.update', async (anu) => {
+    iiuziBotInc.ev.on('group-participants.update', async (anu) => {
 
         console.log(anu)
 
         try {
 
-            let metadata = await iiuzi-0xBotInc.groupMetadata(anu.id)
+            let metadata = await iiuziBotInc.groupMetadata(anu.id)
 
             let participants = anu.participants
 
@@ -254,7 +254,7 @@ async function startiiuzi-0xBotInc() {
 
                 try {
 
-                    ppuser = await iiuzi-0xBotInc.profilePictureUrl(num, 'image')
+                    ppuser = await iiuziBotInc.profilePictureUrl(num, 'image')
 
                 } catch {
 
@@ -268,7 +268,7 @@ async function startiiuzi-0xBotInc() {
 
                 try {
 
-                    ppgroup = await iiuzi-0xBotInc.profilePictureUrl(anu.id, 'image')
+                    ppgroup = await iiuziBotInc.profilePictureUrl(anu.id, 'image')
 
                 } catch {
 
@@ -280,7 +280,7 @@ async function startiiuzi-0xBotInc() {
 
 //welcome\\
 
-        let nama = await iiuzi-0xBotInc.getName(num)
+        let nama = await iiuziBotInc.getName(num)
 
 memb = metadata.participants.length
 
@@ -294,7 +294,7 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
                 if (anu.action == 'add') {
 
-                    iiuzi-0xBotInc.sendMessage(anu.id, { image: Kon, contextInfo: { mentionedJid: [num] }, caption: `
+                    iiuziBotInc.sendMessage(anu.id, { image: Kon, contextInfo: { mentionedJid: [num] }, caption: `
 
 🐭✑ Hi👋 @${num.split("@")[0]},
 
@@ -310,7 +310,7 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
                 } else if (anu.action == 'remove') {
 
-                    iiuzi-0xBotInc.sendMessage(anu.id, { image: Tol, contextInfo: { mentionedJid: [num] }, caption: `🐭✑ @${num.split("@")[0]} Left ${metadata.subject}
+                    iiuziBotInc.sendMessage(anu.id, { image: Tol, contextInfo: { mentionedJid: [num] }, caption: `🐭✑ @${num.split("@")[0]} Left ${metadata.subject}
 
 
 
@@ -332,7 +332,7 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
     //Setting\\
 
-    iiuzi-0xBotInc.decodeJid = (jid) => {
+    iiuziBotInc.decodeJid = (jid) => {
 
         if (!jid) return jid
 
@@ -348,11 +348,11 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
     
 
-    iiuzi-0xBotInc.ev.on('contacts.update', update => {
+    iiuziBotInc.ev.on('contacts.update', update => {
 
         for (let contact of update) {
 
-            let id = iiuzi-0xBotInc.decodeJid(contact.id)
+            let id = iiuziBotInc.decodeJid(contact.id)
 
             if (store && store.contacts) store.contacts[id] = { id, name: contact.notify }
 
@@ -362,11 +362,11 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
 
 
-    iiuzi-0xBotInc.getName = (jid, withoutContact  = false) => {
+    iiuziBotInc.getName = (jid, withoutContact  = false) => {
 
-        id = iiuzi-0xBotInc.decodeJid(jid)
+        id = iiuziBotInc.decodeJid(jid)
 
-        withoutContact = iiuzi-0xBotInc.withoutContact || withoutContact 
+        withoutContact = iiuziBotInc.withoutContact || withoutContact 
 
         let v
 
@@ -374,7 +374,7 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
             v = store.contacts[id] || {}
 
-            if (!(v.name || v.subject)) v = iiuzi-0xBotInc.groupMetadata(id) || {}
+            if (!(v.name || v.subject)) v = iiuziBotInc.groupMetadata(id) || {}
 
             resolve(v.name || v.subject || PhoneNumber('+' + id.replace('@s.whatsapp.net', '')).getNumber('international'))
 
@@ -386,9 +386,9 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
             name: 'WhatsApp'
 
-        } : id === iiuzi-0xBotInc.decodeJid(iiuzi-0xBotInc.user.id) ?
+        } : id === iiuziBotInc.decodeJid(iiuziBotInc.user.id) ?
 
-            iiuzi-0xBotInc.user :
+            iiuziBotInc.user :
 
             (store.contacts[id] || {})
 
@@ -398,7 +398,7 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
     
 
-    iiuzi-0xBotInc.sendContact = async (jid, kon, quoted = '', opts = {}) => {
+    iiuziBotInc.sendContact = async (jid, kon, quoted = '', opts = {}) => {
 
 	let list = []
 
@@ -406,7 +406,7 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
 	    list.push({
 
-	    	displayName: await iiuzi-0xBotInc.getName(i + '@s.whatsapp.net'),
+	    	displayName: await iiuziBotInc.getName(i + '@s.whatsapp.net'),
 
 	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${ownername}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Click To Chat\nitem2.EMAIL;type=INTERNET:${sc}\nitem2.X-ABLabel:Script\nitem3.URL:${myweb}\nitem3.X-ABLabel:Script\nitem4.ADR:;;${region};;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
 
@@ -414,15 +414,15 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
 	}
 
-	iiuzi-0xBotInc.sendMessage(jid, { contacts: { displayName: `${list.length} Contact`, contacts: list }, ...opts }, { quoted })
+	iiuziBotInc.sendMessage(jid, { contacts: { displayName: `${list.length} Contact`, contacts: list }, ...opts }, { quoted })
 
     }
 
     
 
-    iiuzi-0xBotInc.setStatus = (status) => {
+    iiuziBotInc.setStatus = (status) => {
 
-        iiuzi-0xBotInc.query({
+        iiuziBotInc.query({
 
             tag: 'iq',
 
@@ -454,15 +454,15 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
 	
 
-    iiuzi-0xBotInc.public = true
+    iiuziBotInc.public = true
 
 
 
-    iiuzi-0xBotInc.serializeM = (m) => smsg(iiuzi-0xBotInc, m, store)
+    iiuziBotInc.serializeM = (m) => smsg(iiuziBotInc, m, store)
 
 
 
-    iiuzi-0xBotInc.ev.on('connection.update', async (update) => {
+    iiuziBotInc.ev.on('connection.update', async (update) => {
 
         const { connection, lastDisconnect } = update	    
 
@@ -470,21 +470,21 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
         let reason = new Boom(lastDisconnect?.error)?.output.statusCode
 
-            if (reason === DisconnectReason.badSession) { console.log(`Bad Session File, Please Delete Session and Scan Again`); iiuzi-0xBotInc.logout(); }
+            if (reason === DisconnectReason.badSession) { console.log(`Bad Session File, Please Delete Session and Scan Again`); iiuziBotInc.logout(); }
 
-            else if (reason === DisconnectReason.connectionClosed) { console.log("🐈Connection closed, reconnecting...."); startiiuzi-0xBotInc(); }
+            else if (reason === DisconnectReason.connectionClosed) { console.log("🐈Connection closed, reconnecting...."); startiiuziBotInc(); }
 
-            else if (reason === DisconnectReason.connectionLost) { console.log("🐈Connection Lost from Server, reconnecting..."); startiiuzi-0xBotInc(); }
+            else if (reason === DisconnectReason.connectionLost) { console.log("🐈Connection Lost from Server, reconnecting..."); startiiuziBotInc(); }
 
-            else if (reason === DisconnectReason.connectionReplaced) { console.log("🐈Connection Replaced, Another New Session Opened, Please Close Current Session First"); iiuzi-0xBotInc.logout(); }
+            else if (reason === DisconnectReason.connectionReplaced) { console.log("🐈Connection Replaced, Another New Session Opened, Please Close Current Session First"); iiuziBotInc.logout(); }
 
-            else if (reason === DisconnectReason.loggedOut) { console.log(`🐈Device Logged Out, Please Scan Again And Run.`); iiuzi-0xBotInc.logout(); }
+            else if (reason === DisconnectReason.loggedOut) { console.log(`🐈Device Logged Out, Please Scan Again And Run.`); iiuziBotInc.logout(); }
 
-            else if (reason === DisconnectReason.restartRequired) { console.log("🐈Restart Required, Restarting..."); startiiuzi-0xBotInc(); }
+            else if (reason === DisconnectReason.restartRequired) { console.log("🐈Restart Required, Restarting..."); startiiuziBotInc(); }
 
-            else if (reason === DisconnectReason.timedOut) { console.log("🐈Connection TimedOut, Reconnecting..."); startiiuzi-0xBotInc(); }
+            else if (reason === DisconnectReason.timedOut) { console.log("🐈Connection TimedOut, Reconnecting..."); startiiuziBotInc(); }
 
-            else iiuzi-0xBotInc.end(`🐈Unknown DisconnectReason: ${reason}|${connection}`)
+            else iiuziBotInc.end(`🐈Unknown DisconnectReason: ${reason}|${connection}`)
 
         }
 
@@ -494,7 +494,7 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
 
 
-    iiuzi-0xBotInc.ev.on('creds.update', saveState)
+    iiuziBotInc.ev.on('creds.update', saveState)
 
 
 
@@ -520,9 +520,9 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
      */
 
-    iiuzi-0xBotInc.send5ButImg = async (jid , text = '' , footer = '', img, but = [], options = {}) =>{
+    iiuziBotInc.send5ButImg = async (jid , text = '' , footer = '', img, but = [], options = {}) =>{
 
-        let message = await prepareWAMessageMedia({ image: img }, { upload: iiuzi-0xBotInc.waUploadToServer })
+        let message = await prepareWAMessageMedia({ image: img }, { upload: iiuziBotInc.waUploadToServer })
 
         var template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 
@@ -544,7 +544,7 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
             }), options)
 
-            iiuzi-0xBotInc.relayMessage(jid, template.message, { messageId: template.key.id })
+            iiuziBotInc.relayMessage(jid, template.message, { messageId: template.key.id })
 
     }
 
@@ -568,7 +568,7 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
      */
 
-    iiuzi-0xBotInc.sendButtonText = (jid, buttons = [], text, footer, quoted = '', options = {}) => {
+    iiuziBotInc.sendButtonText = (jid, buttons = [], text, footer, quoted = '', options = {}) => {
 
         let buttonMessage = {
 
@@ -584,7 +584,7 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
         }
 
-        iiuzi-0xBotInc.sendMessage(jid, buttonMessage, { quoted, ...options })
+        iiuziBotInc.sendMessage(jid, buttonMessage, { quoted, ...options })
 
     }
 
@@ -606,7 +606,7 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
      */
 
-    iiuzi-0xBotInc.sendText = (jid, text, quoted = '', options) => iiuzi-0xBotInc.sendMessage(jid, { text: text, ...options }, { quoted })
+    iiuziBotInc.sendText = (jid, text, quoted = '', options) => iiuziBotInc.sendMessage(jid, { text: text, ...options }, { quoted })
 
 
 
@@ -628,11 +628,11 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
      */
 
-    iiuzi-0xBotInc.sendImage = async (jid, path, caption = '', quoted = '', options) => {
+    iiuziBotInc.sendImage = async (jid, path, caption = '', quoted = '', options) => {
 
 	let buffer = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
 
-        return await iiuzi-0xBotInc.sendMessage(jid, { image: buffer, caption: caption, ...options }, { quoted })
+        return await iiuziBotInc.sendMessage(jid, { image: buffer, caption: caption, ...options }, { quoted })
 
     }
 
@@ -656,11 +656,11 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
      */
 
-    iiuzi-0xBotInc.sendVideo = async (jid, path, caption = '', quoted = '', gif = false, options) => {
+    iiuziBotInc.sendVideo = async (jid, path, caption = '', quoted = '', gif = false, options) => {
 
         let buffer = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
 
-        return await iiuzi-0xBotInc.sendMessage(jid, { video: buffer, caption: caption, gifPlayback: gif, ...options }, { quoted })
+        return await iiuziBotInc.sendMessage(jid, { video: buffer, caption: caption, gifPlayback: gif, ...options }, { quoted })
 
     }
 
@@ -684,11 +684,11 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
      */
 
-    iiuzi-0xBotInc.sendAudio = async (jid, path, quoted = '', ptt = false, options) => {
+    iiuziBotInc.sendAudio = async (jid, path, quoted = '', ptt = false, options) => {
 
         let buffer = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
 
-        return await iiuzi-0xBotInc.sendMessage(jid, { audio: buffer, ptt: ptt, ...options }, { quoted })
+        return await iiuziBotInc.sendMessage(jid, { audio: buffer, ptt: ptt, ...options }, { quoted })
 
     }
 
@@ -710,7 +710,7 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
      */
 
-    iiuzi-0xBotInc.sendTextWithMentions = async (jid, text, quoted, options = {}) => iiuzi-0xBotInc.sendMessage(jid, { text: text, contextInfo: { mentionedJid: [...text.matchAll(/@(\d{0,16})/g)].map(v => v[1] + '@s.whatsapp.net') }, ...options }, { quoted })
+    iiuziBotInc.sendTextWithMentions = async (jid, text, quoted, options = {}) => iiuziBotInc.sendMessage(jid, { text: text, contextInfo: { mentionedJid: [...text.matchAll(/@(\d{0,16})/g)].map(v => v[1] + '@s.whatsapp.net') }, ...options }, { quoted })
 
 
 
@@ -730,7 +730,7 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
      */
 
-    iiuzi-0xBotInc.sendImageAsSticker = async (jid, path, quoted, options = {}) => {
+    iiuziBotInc.sendImageAsSticker = async (jid, path, quoted, options = {}) => {
 
         let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
 
@@ -748,7 +748,7 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
 
 
-        await iiuzi-0xBotInc.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
+        await iiuziBotInc.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
 
         return buffer
 
@@ -772,7 +772,7 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
      */
 
-    iiuzi-0xBotInc.sendVideoAsSticker = async (jid, path, quoted, options = {}) => {
+    iiuziBotInc.sendVideoAsSticker = async (jid, path, quoted, options = {}) => {
 
         let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
 
@@ -790,7 +790,7 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
 
 
-        await iiuzi-0xBotInc.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
+        await iiuziBotInc.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
 
         return buffer
 
@@ -812,7 +812,7 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
      */
 
-    iiuzi-0xBotInc.downloadAndSaveMediaMessage = async (message, filename, attachExtension = true) => {
+    iiuziBotInc.downloadAndSaveMediaMessage = async (message, filename, attachExtension = true) => {
 
         let quoted = message.msg ? message.msg : message
 
@@ -844,7 +844,7 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
 
 
-    iiuzi-0xBotInc.downloadMediaMessage = async (message) => {
+    iiuziBotInc.downloadMediaMessage = async (message) => {
 
         let mime = (message.msg || message).mimetype || ''
 
@@ -888,9 +888,9 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
      */
 
-    iiuzi-0xBotInc.sendMedia = async (jid, path, fileName = '', caption = '', quoted = '', options = {}) => {
+    iiuziBotInc.sendMedia = async (jid, path, fileName = '', caption = '', quoted = '', options = {}) => {
 
-        let types = await iiuzi-0xBotInc.getFile(path, true)
+        let types = await iiuziBotInc.getFile(path, true)
 
            let { mime, ext, res, data, filename } = types
 
@@ -930,7 +930,7 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
        else type = 'document'
 
-       await iiuzi-0xBotInc.sendMessage(jid, { [type]: { url: pathFile }, caption, mimetype, fileName, ...options }, { quoted, ...options })
+       await iiuziBotInc.sendMessage(jid, { [type]: { url: pathFile }, caption, mimetype, fileName, ...options }, { quoted, ...options })
 
        return fs.promises.unlink(pathFile)
 
@@ -954,7 +954,7 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
      */
 
-    iiuzi-0xBotInc.copyNForward = async (jid, message, forceForward = false, options = {}) => {
+    iiuziBotInc.copyNForward = async (jid, message, forceForward = false, options = {}) => {
 
         let vtype
 
@@ -1016,7 +1016,7 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
         } : {})
 
-        await iiuzi-0xBotInc.relayMessage(jid, waMessage.message, { messageId:  waMessage.key.id })
+        await iiuziBotInc.relayMessage(jid, waMessage.message, { messageId:  waMessage.key.id })
 
         return waMessage
 
@@ -1024,7 +1024,7 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
 
 
-    iiuzi-0xBotInc.cMod = (jid, copy, text = '', sender = iiuzi-0xBotInc.user.id, options = {}) => {
+    iiuziBotInc.cMod = (jid, copy, text = '', sender = iiuziBotInc.user.id, options = {}) => {
 
         //let copy = message.toJSON()
 
@@ -1066,7 +1066,7 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
 		copy.key.remoteJid = jid
 
-		copy.key.fromMe = sender === iiuzi-0xBotInc.user.id
+		copy.key.fromMe = sender === iiuziBotInc.user.id
 
 
 
@@ -1088,7 +1088,7 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
      */
 
-    iiuzi-0xBotInc.getFile = async (PATH, save) => {
+    iiuziBotInc.getFile = async (PATH, save) => {
 
         let res
 
@@ -1128,13 +1128,13 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
 
 
-    return iiuzi-0xBotInc
+    return iiuziBotInc
 
 }
 
 
 
-startiiuzi-0xBotInc()
+startiiuziBotInc()
 
 
 
