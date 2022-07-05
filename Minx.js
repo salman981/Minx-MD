@@ -3544,7 +3544,7 @@ break
 
                             }]
 
-                      let txt = `「 Cheems Bot Broadcast 」\n\n${text}`
+                      let txt = `「 Minx Bot Broadcast 」\n\n${text}`
 
                       iiuziBotInc.send5ButImg(i, txt, iiuziBotInc.user.name, global.thumb, btn)
 
@@ -3612,7 +3612,7 @@ break
 
                             }]
 
-                      let txt = `「 Cheems Bot Broadcast 」\n\n${text}`
+                      let txt = `「 Minx Bot Broadcast 」\n\n${text}`
 
                       iiuziBotInc.send5ButImg(yoi, txt, iiuziBotInc.user.name, global.thumb, btn)
 
@@ -6582,7 +6582,7 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 
 └┬❖ 「 ${pushname} 」
 
-┌┤✑  Cheems Bot With You Forever 
+┌┤✑  Minx Bot With You Forever 
 
 ││✑  🐈🖐️!!
 
