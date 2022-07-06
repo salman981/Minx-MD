@@ -418,7 +418,7 @@ module.exports = iiuziBotInc = async (iiuziBotInc, m, chatUpdate, store) => {
 
 const reply = (teks) => {
 
-            iiuziBotInc.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` Join Bot's Official GC`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./MinxMedia/Minx.jpg`),"sourceUrl": "https://chat.whatsapp.com/EcVIsg2j0UH93Z1sLhTCyW"}}}, { quoted: m})
+            iiuziBotInc.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` Join Bot's Official GC`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./MinxMedia/Minx md.jpg`),"sourceUrl": "https://chat.whatsapp.com/EcVIsg2j0UH93Z1sLhTCyW"}}}, { quoted: m})
 
         }
 
@@ -426,7 +426,7 @@ const reply = (teks) => {
 
         const replay = (teks) => {
 
-            iiuziBotInc.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` Join Bot's Official GC`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./MinxMedia/Minx.jpg`),"sourceUrl": "https://chat.whatsapp.com/HYj9wu5Jrv6CROxyeQbHoS"}}}, { quoted: m})
+            iiuziBotInc.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` Join Bot's Official GC`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./MinxMedia/Minx md.jpg`),"sourceUrl": "https://chat.whatsapp.com/HYj9wu5Jrv6CROxyeQbHoS"}}}, { quoted: m})
 
         }
 
@@ -6574,7 +6574,7 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 
                             locationMessage: {
 
-                            jpegThumbnail: fs.readFileSync('./MinxMedia/Minx.jpg')},
+                            jpegThumbnail: fs.readFileSync('./MinxMedia/Minx md.jpg')},
 
                             hydratedFooterText: `┌─❖
 
@@ -6694,7 +6694,7 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 
                             locationMessage: {
 
-                            jpegThumbnail: fs.readFileSync('./MinxMedia/Minx.jpg')}, 
+                            jpegThumbnail: fs.readFileSync('./MinxMedia/Minx md.jpg')}, 
 
                             hydratedFooterText: `
 
@@ -7522,7 +7522,7 @@ case 'allmenu': {
 
                             locationMessage: {
 
-                            jpegThumbnail: fs.readFileSync('./MinxMedia/Minx.jpg')},
+                            jpegThumbnail: fs.readFileSync('./MinxMedia/Minx md.jpg')},
 
                             hydratedFooterText: `${pushname}`,
 
