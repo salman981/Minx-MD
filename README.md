@@ -5,7 +5,7 @@
 ## Minx-MD
 
 ## `Scan QR Code For Session`
-[![Minx Bot](https://repl.it/badge/github/quiec/whatsasena)](https://replit.com/@iiuzix0/Minx-MD-QR?v=1?outputonly=1&lite=1#index.js)
+[![Minx Bot](https://repl.it/badge/github/quiec/whatsasena)](https://replit.com/@iiuzi-x0/Minx-MD-QR?v=1?outputonly=1&lite=1#index.js)
 
 ## ` BUILDPACKS`
 
